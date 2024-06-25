@@ -45,6 +45,10 @@
       { track: "melodic blue", artist: "Baby Keem", length: 420 },
     ];
   };
+
+  //logging stuff with reactive blocks
+  let ck = 0;
+  $: console.log(`Event ${ck} has been triggereed !`);
 </script>
 
 <p>Clicked {count} {count === 1 ? "time" : "times"}</p>
@@ -58,6 +62,8 @@
 
 <button on:click={addTrack}>Add New Album</button>
 <p>Album length is {albumLen.minutes} minutes and {albumLen.secs} secs</p>
+
+<button on:click={() => ck++}>Log</button>
 
 <style>
   * {
