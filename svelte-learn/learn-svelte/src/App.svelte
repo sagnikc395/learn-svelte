@@ -49,6 +49,17 @@
   //logging stuff with reactive blocks
   let ck = 0;
   $: console.log(`Event ${ck} has been triggereed !`);
+
+  //reactive blocks
+
+  let count2 = 0;
+  $: {
+    console.log(`The count is ${count2}`);
+    if (count2 >= 4) {
+      console.log(`Restarting ccounter.`);
+      count2 = 0;
+    }
+  }
 </script>
 
 <p>Clicked {count} {count === 1 ? "time" : "times"}</p>
@@ -63,7 +74,7 @@
 <button on:click={addTrack}>Add New Album</button>
 <p>Album length is {albumLen.minutes} minutes and {albumLen.secs} secs</p>
 
-<button on:click={() => ck++}>Log</button>
+<button on:click={() => count2++}>Log</button>
 
 <style>
   * {
