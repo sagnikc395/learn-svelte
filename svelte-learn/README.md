@@ -30,4 +30,14 @@ we assign a value to a variable we declared and it's going to update.
 methods like push won't trigger an update until we reassign it. We can avoid doing the extra step
 by using the JS spread operator ... to keep existing items and add the new item.
 
+- Sometimes we may need to change a value based on other values. This is also 
+referred to as a computed property.
 
+- Svelte has reactive declarations using the $: syntax which is valid JS label syntax , 
+that Svelte uses it for.
+- Using $: syntax is saying that "re-run this code whenever any of the referenced values change".
+
+- This is likve giving Svelte dependencies to watch and rerun the changes when the value changes 
+because in $: albumLength = getAlbumLength(album) on the right album changes.
+
+-  
