@@ -1,6 +1,4 @@
 <script type="js">
-  import { get } from "svelte/store";
-
   // @ts-nocheck
   let count = 0;
 
@@ -60,6 +58,25 @@
       count2 = 0;
     }
   }
+
+  //logic in svelte
+  let user = {
+    loggedIn: false,
+  };
+
+  const toggle = () => {
+    user.loggedIn = !user.loggedIn;
+  };
+
+  //iterating over data
+
+  let todos = [
+    { id: 1, text: "Todo #1", completed: true },
+    { id: 2, text: "Todo #2", completed: true },
+    { id: 3, text: "Todo #3", completed: false },
+    { id: 4, text: "Todo #4", completed: true },
+    { id: 5, text: "Todo #5", completed: false },
+  ];
 </script>
 
 <p>Clicked {count} {count === 1 ? "time" : "times"}</p>
@@ -74,7 +91,25 @@
 <button on:click={addTrack}>Add New Album</button>
 <p>Album length is {albumLen.minutes} minutes and {albumLen.secs} secs</p>
 
-<button on:click={() => count2++}>Log</button>
+<button on:click={() => count2++}>Logging Data</button>
+
+<!-- conditional rendering in svelte-->
+{#if user.loggedIn}
+  <button on:click={toggle}>Log Out</button>
+{/if}
+
+{#if !user.loggedIn}
+  <button on:click={toggle}>L In</button>
+{/if}
+
+<ul>
+  {#each todos as todo}
+    <li>
+      <input checked={todo.completed} type="checkbox" />
+      <span>{todo.text}</span>
+    </li>
+  {/each}
+</ul>
 
 <style>
   * {

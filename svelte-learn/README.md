@@ -44,4 +44,6 @@ because in $: albumLength = getAlbumLength(album) on the right album changes.
 ### Logic:
 
 - HTML can't express logic such as conditionals and loops us would have to write JS for that.
-
+- we can decalrateively use confitional using {#if <cond>}{/if} 
+- for each loop like normal jas 
+for(let todo of todos) etc. where todos is a object.
