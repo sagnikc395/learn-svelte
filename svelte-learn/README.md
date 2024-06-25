@@ -40,4 +40,8 @@ that Svelte uses it for.
 - This is likve giving Svelte dependencies to watch and rerun the changes when the value changes 
 because in $: albumLength = getAlbumLength(album) on the right album changes.
 
--  
+
+### Logic:
+
+- HTML can't express logic such as conditionals and loops us would have to write JS for that.
+
