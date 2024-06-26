@@ -1,0 +1,3 @@
+- ts can infer the types to provide type information.
+- ts can also infer the return types of a function. If it does not return anything it's void.
+- 
