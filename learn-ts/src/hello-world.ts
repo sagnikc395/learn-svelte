@@ -27,3 +27,7 @@ const logPokemon = (pokemons: string[] | null) => {
 };
 
 logPokemon(["Bulbasuar", "Charmander", "Squirtle"]);
+
+// runtime is when js code gets executed.
+// TS is only checking code at compile time -> after compilation gets converted to js
+
