@@ -47,3 +47,5 @@ because in $: albumLength = getAlbumLength(album) on the right album changes.
 - we can decalrateively use confitional using {#if <cond>}{/if} 
 - for each loop like normal jas 
 for(let todo of todos) etc. where todos is a object.
+
+
